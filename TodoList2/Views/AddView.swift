@@ -48,7 +48,7 @@ struct AddView: View {
     }
     func textIsAppropriate() -> Bool {
         if textFieldText.count < 3 {
-            alertTitle = "Your item must be at least 3 characters long.😢"
+            alertTitle = "Your item must be at least 3 characters long."
             showAlert.toggle()
             return false
         }
