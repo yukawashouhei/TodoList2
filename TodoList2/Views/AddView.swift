@@ -24,6 +24,8 @@ struct AddView: View {
                     .frame(height:55)
                     .background(Color(UIColor.systemGray6))
                     .cornerRadius(10)
+                    .accessibilityLabel("タスクのタイトル")
+                    .accessibilityHint("新しいタスクのタイトルを入力してください")
                 
                 Button(action: saveButtonPressed, label: {
                     Text("Save".uppercased())
@@ -33,6 +35,8 @@ struct AddView: View {
                         .background(Color.accentColor)
                         .cornerRadius(10)
                 })
+                .accessibilityLabel("保存")
+                .accessibilityHint("新しいタスクを保存します")
             }
             .padding(14 )
         }

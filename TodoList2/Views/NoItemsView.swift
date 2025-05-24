@@ -9,10 +9,26 @@ import SwiftUI
 
 struct NoItemsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+                Text("There are no items!")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .accessibilityLabel("タスクがありません")
+                Text("Are you a productive person? Ithink you should click the add button and add a bunch of items to your todo list!")
+                    .accessibilityLabel("生産的な人になりましょう。追加ボタンをクリックして、タスクを追加してください。")
+            }
+            .multilineTextAlignment(.center)
+            .padding(40)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .accessibilityElement(children: .combine)
     }
 }
 
 #Preview {
-    NoItemsView()
+    NavigationView {
+        NoItemsView()
+            .navigationTitle("Title")
+    }
 }

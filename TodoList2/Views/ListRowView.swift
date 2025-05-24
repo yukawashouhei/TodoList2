@@ -15,11 +15,15 @@ struct ListRowView: View {
         HStack {
             Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
                 .foregroundColor(item.isCompleted ? .green : .red)
+                .accessibilityLabel(item.isCompleted ? "完了済み" : "未完了")
+                .accessibilityHint("タップして状態を変更")
             Text(item.title)
+                .accessibilityLabel(item.title)
             Spacer()
         }
         .font(.title2)
         .padding(.vertical, 8)
+        .accessibilityElement(children: .combine)
     }
 }
 
